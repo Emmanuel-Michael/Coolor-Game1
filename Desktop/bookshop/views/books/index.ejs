@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+    <%- include("partials/navbar") %>
+
+    <h2>All Books</h2>
+    <ul>
+        <% for(let book of books) { %>
+            <a href="/books/<%= book._id %>">
+                <li>
+                    <%= book.title %> : <%= book.author  %> 
+                 
+                </li>
+            </a>
+            <img style="width: 5rem; height: 5rem;" src="/uploads/images/<%= book.image  %> " alt="">
+            <% } %>
+    </ul>
+    
+
+    <br>
+    <a href="/addBook"> <button>Add a Book</button></a>
+
+        <%- include("partials/footer") %>

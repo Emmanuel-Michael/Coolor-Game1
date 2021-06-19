@@ -1,0 +1,28 @@
+<%- include("partials/header") %>
+    <%- include("partials/navbar") %>
+
+    <h2>Edit Your Book</h2>
+ 
+    <p>Author: <%= book.author  %> </p>
+    <p>Description: <%= book.description  %> </p>
+    <p>Purchase Count: <%= book.purchaseCount  %> </p>
+    <p>Category: <%= book.category  %> </p>
+    <p>Tags: <%= book.tags  %> </p>
+    <p>Image: <%= book.imageUrl %> </p>
+
+    <form action="/books/<%= book._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <p>Edit Purchase Count</p>
+      <label for="purchaseCount">PurchaseCount</label>
+        <input type="number" name="purchaseCount">
+
+    <label for="tags">Tags</label>
+    <select name="tags" id="tags">
+        <option value="onOffer">On Offer</option>
+        <option value="outOfStock">Out Of Stock</option>
+    </select>
+    <label for="image">Image Url</label>
+    <input type="file" name="image" id="image">
+        <button>Save changes</button>
+    </form>
+
+    <%- include("partials/footer") %>
