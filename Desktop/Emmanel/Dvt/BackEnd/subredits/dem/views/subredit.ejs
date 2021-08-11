@@ -1,0 +1,18 @@
+
+
+  <%- include("partials/header") %>
+  <%- include("partials/navbar") %>
+
+<h1><%= name  %> </h1>
+<h2><%= description %> </h2>
+<% for(post of posts){ %>
+    <p> <%= post.title  %> : <%= post.author  %>   </p>
+<%}%>
+
+ <% if(post.img){ %>
+     <img src="<%= post.img  %> " alt="">
+<%}else{%>
+  <h2>Sorry, image not found!</h2>
+<% } %>
+
+<%- include("partials/footer") %>

@@ -1,0 +1,11 @@
+<%- include("partials/navbar") %>
+    <%- include("partials/header") %>
+    <h1> This are my favourite friends</h1>
+    <h2>
+        <% friends.forEach((friend)=>{ %>
+            <ul>
+                <li> <%= friend  %>  </li>
+            </ul>
+       <% })%>
+    </h2>
+    <%- include("partials/footer") %>
